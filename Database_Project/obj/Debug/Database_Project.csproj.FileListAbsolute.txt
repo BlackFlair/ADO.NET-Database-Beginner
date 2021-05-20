@@ -1,0 +1,7 @@
+W:\__WORK__\NewWave Technologies (India)\Training\Code\Database_Project\Database_Project\bin\Debug\Database_Project.exe.config
+W:\__WORK__\NewWave Technologies (India)\Training\Code\Database_Project\Database_Project\bin\Debug\Database_Project.exe
+W:\__WORK__\NewWave Technologies (India)\Training\Code\Database_Project\Database_Project\bin\Debug\Database_Project.pdb
+W:\__WORK__\NewWave Technologies (India)\Training\Code\Database_Project\Database_Project\obj\Debug\Database_Project.csprojAssemblyReference.cache
+W:\__WORK__\NewWave Technologies (India)\Training\Code\Database_Project\Database_Project\obj\Debug\Database_Project.csproj.CoreCompileInputs.cache
+W:\__WORK__\NewWave Technologies (India)\Training\Code\Database_Project\Database_Project\obj\Debug\Database_Project.exe
+W:\__WORK__\NewWave Technologies (India)\Training\Code\Database_Project\Database_Project\obj\Debug\Database_Project.pdb

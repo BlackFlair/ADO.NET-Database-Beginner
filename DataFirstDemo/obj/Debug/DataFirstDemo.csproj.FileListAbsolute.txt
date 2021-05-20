@@ -1,0 +1,15 @@
+W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\DataFirstDemo\bin\Debug\DataFirstDemo.exe.config
+W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\DataFirstDemo\bin\Debug\DataFirstDemo.exe
+W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\DataFirstDemo\bin\Debug\DataFirstDemo.pdb
+W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\DataFirstDemo\bin\Debug\EntityFramework.dll
+W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\DataFirstDemo\bin\Debug\EntityFramework.SqlServer.dll
+W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\DataFirstDemo\bin\Debug\EntityFramework.xml
+W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\DataFirstDemo\bin\Debug\EntityFramework.SqlServer.xml
+W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\DataFirstDemo\obj\Debug\DataFirstDemo.csprojAssemblyReference.cache
+W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\DataFirstDemo\obj\Debug\DataFirstDemo.Properties.Resources.resources
+W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\DataFirstDemo\obj\Debug\DataFirstDemo.csproj.GenerateResource.cache
+W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\DataFirstDemo\obj\Debug\DataFirstDemo.csproj.CoreCompileInputs.cache
+W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\DataFirstDemo\obj\Debug\DataFirstDemo.csproj.CopyComplete
+W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\DataFirstDemo\obj\Debug\DataFirstDemo.exe
+W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\DataFirstDemo\obj\Debug\DataFirstDemo.pdb
+W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\DataFirstDemo\obj\Debug\DataFirstDemo.NorthWindHome.resources
