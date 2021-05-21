@@ -8,6 +8,7 @@
     <Property Name="CategoryName" Type="nvarchar" MaxLength="15" Nullable="false" />
     <Property Name="Description" Type="ntext" />
     <Property Name="Picture" Type="image" />
+    <Property Name="Notes" Type="nchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="CustomerCustomerDemo">
     <Key>

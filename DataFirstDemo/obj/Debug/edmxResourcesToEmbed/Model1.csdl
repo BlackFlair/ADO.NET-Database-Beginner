@@ -9,6 +9,7 @@
     <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
     <NavigationProperty Name="Products" Relationship="Self.FK_Products_Categories" FromRole="Categories" ToRole="Products" />
+    <Property Name="Notes" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
   </EntityType>
   <EntityType Name="CustomerDemographic">
     <Key>

@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Categories">
       <EntityTypeMapping TypeName="NorthwindModel.Category">
         <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
           <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
           <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
           <ScalarProperty Name="Description" ColumnName="Description" />
