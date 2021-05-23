@@ -25,12 +25,13 @@ namespace Database_Assessment
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Expens> Expenses { get; set; }
+        public virtual DbSet<Expence> Expences { get; set; }
         public virtual DbSet<Priest> Priests { get; set; }
         public virtual DbSet<Responsibility> Responsibilities { get; set; }
         public virtual DbSet<RiceItemsList> RiceItemsLists { get; set; }
         public virtual DbSet<SweetDishesList> SweetDishesLists { get; set; }
         public virtual DbSet<Chore> Chores { get; set; }
         public virtual DbSet<PrasadamDistribution> PrasadamDistributions { get; set; }
+        public virtual DbSet<Login> Logins { get; set; }
     }
 }

@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TempleDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Priest">
+    <Key>
+      <PropertyRef Name="PriestID" />
+    </Key>
+    <Property Name="PriestID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContactNumber" Type="Int32" Nullable="false" />
+    <Property Name="DOJ" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="LockerNumber" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Chores" Relationship="Self.FK_Chores_Priests" FromRole="Priests" ToRole="Chores" />
+    <NavigationProperty Name="PrasadamDistributions" Relationship="Self.FK_PrasadamDistribution_Priests" FromRole="Priests" ToRole="PrasadamDistribution" />
+  </EntityType>
+  <EntityType Name="Responsibility">
+    <Key>
+      <PropertyRef Name="ResponsibilityID" />
+    </Key>
+    <Property Name="ResponsibilityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Responsibility1" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MinimumExperience" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Chores" Relationship="Self.FK_Chores_Responsibilities" FromRole="Responsibilities" ToRole="Chores" />
+  </EntityType>
+  <EntityType Name="RiceItemsList">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DishName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CostPerPlate" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <NavigationProperty Name="PrasadamDistributions" Relationship="Self.FK_PrasadamDistribution_RiceItemsList" FromRole="RiceItemsList" ToRole="PrasadamDistribution" />
+  </EntityType>
+  <EntityType Name="SweetDishesList">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DishName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CostPerPlate" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <NavigationProperty Name="PrasadamDistributions" Relationship="Self.FK_PrasadamDistribution_SweetDishesList" FromRole="SweetDishesList" ToRole="PrasadamDistribution" />
+  </EntityType>
+  <EntityType Name="Chore">
+    <Key>
+      <PropertyRef Name="SrNo" />
+    </Key>
+    <Property Name="SrNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PriestID" Type="Int32" />
+    <Property Name="Resonsibilities" Type="Int32" />
+    <NavigationProperty Name="Priest" Relationship="Self.FK_Chores_Priests" FromRole="Chores" ToRole="Priests" />
+    <NavigationProperty Name="Responsibility" Relationship="Self.FK_Chores_Responsibilities" FromRole="Chores" ToRole="Responsibilities" />
+  </EntityType>
+  <EntityType Name="PrasadamDistribution">
+    <Key>
+      <PropertyRef Name="SrNo" />
+      <PropertyRef Name="Date" />
+      <PropertyRef Name="Quantity" />
+    </Key>
+    <Property Name="SrNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="PriestID" Type="Int32" />
+    <Property Name="SweetDishIDs" Type="Int32" />
+    <Property Name="RiceItemIDs" Type="Int32" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Priest" Relationship="Self.FK_PrasadamDistribution_Priests" FromRole="PrasadamDistribution" ToRole="Priests" />
+    <NavigationProperty Name="RiceItemsList" Relationship="Self.FK_PrasadamDistribution_RiceItemsList" FromRole="PrasadamDistribution" ToRole="RiceItemsList" />
+    <NavigationProperty Name="SweetDishesList" Relationship="Self.FK_PrasadamDistribution_SweetDishesList" FromRole="PrasadamDistribution" ToRole="SweetDishesList" />
+  </EntityType>
+  <Association Name="FK_Chores_Priests">
+    <End Role="Priests" Type="Self.Priest" Multiplicity="0..1" />
+    <End Role="Chores" Type="Self.Chore" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Priests">
+        <PropertyRef Name="PriestID" />
+      </Principal>
+      <Dependent Role="Chores">
+        <PropertyRef Name="PriestID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PrasadamDistribution_Priests">
+    <End Role="Priests" Type="Self.Priest" Multiplicity="0..1" />
+    <End Role="PrasadamDistribution" Type="Self.PrasadamDistribution" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Priests">
+        <PropertyRef Name="PriestID" />
+      </Principal>
+      <Dependent Role="PrasadamDistribution">
+        <PropertyRef Name="PriestID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Chores_Responsibilities">
+    <End Role="Responsibilities" Type="Self.Responsibility" Multiplicity="0..1" />
+    <End Role="Chores" Type="Self.Chore" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Responsibilities">
+        <PropertyRef Name="ResponsibilityID" />
+      </Principal>
+      <Dependent Role="Chores">
+        <PropertyRef Name="Resonsibilities" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PrasadamDistribution_RiceItemsList">
+    <End Role="RiceItemsList" Type="Self.RiceItemsList" Multiplicity="0..1" />
+    <End Role="PrasadamDistribution" Type="Self.PrasadamDistribution" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RiceItemsList">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="PrasadamDistribution">
+        <PropertyRef Name="RiceItemIDs" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PrasadamDistribution_SweetDishesList">
+    <End Role="SweetDishesList" Type="Self.SweetDishesList" Multiplicity="0..1" />
+    <End Role="PrasadamDistribution" Type="Self.PrasadamDistribution" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SweetDishesList">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="PrasadamDistribution">
+        <PropertyRef Name="SweetDishIDs" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TempleDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Priests" EntityType="Self.Priest" />
+    <EntitySet Name="Responsibilities" EntityType="Self.Responsibility" />
+    <EntitySet Name="RiceItemsLists" EntityType="Self.RiceItemsList" />
+    <EntitySet Name="SweetDishesLists" EntityType="Self.SweetDishesList" />
+    <EntitySet Name="Chores" EntityType="Self.Chore" />
+    <EntitySet Name="PrasadamDistributions" EntityType="Self.PrasadamDistribution" />
+    <AssociationSet Name="FK_Chores_Priests" Association="Self.FK_Chores_Priests">
+      <End Role="Priests" EntitySet="Priests" />
+      <End Role="Chores" EntitySet="Chores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PrasadamDistribution_Priests" Association="Self.FK_PrasadamDistribution_Priests">
+      <End Role="Priests" EntitySet="Priests" />
+      <End Role="PrasadamDistribution" EntitySet="PrasadamDistributions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Chores_Responsibilities" Association="Self.FK_Chores_Responsibilities">
+      <End Role="Responsibilities" EntitySet="Responsibilities" />
+      <End Role="Chores" EntitySet="Chores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PrasadamDistribution_RiceItemsList" Association="Self.FK_PrasadamDistribution_RiceItemsList">
+      <End Role="RiceItemsList" EntitySet="RiceItemsLists" />
+      <End Role="PrasadamDistribution" EntitySet="PrasadamDistributions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PrasadamDistribution_SweetDishesList" Association="Self.FK_PrasadamDistribution_SweetDishesList">
+      <End Role="SweetDishesList" EntitySet="SweetDishesLists" />
+      <End Role="PrasadamDistribution" EntitySet="PrasadamDistributions" />
+    </AssociationSet>
+    <EntitySet Name="Expences" EntityType="TempleDBModel.Expence" />
+    <EntitySet Name="Logins" EntityType="TempleDBModel.Login" />
+  </EntityContainer>
+  <EntityType Name="Expence">
+    <Key>
+      <PropertyRef Name="SrNo" />
+    </Key>
+    <Property Name="SrNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Daily" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Monthly" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Yearly" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

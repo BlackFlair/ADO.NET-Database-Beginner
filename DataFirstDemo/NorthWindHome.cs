@@ -121,7 +121,6 @@ namespace DataFirstDemo
                 x.Order.Customer.ContactName,
                 x.Quantity
             });
-            dataGridView1.DataSource = query5.ToList();
-        }
+            dataGridView1.DataSource = query5.ToList();        }
     }
 }

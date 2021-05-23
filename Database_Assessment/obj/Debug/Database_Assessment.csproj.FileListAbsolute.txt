@@ -12,3 +12,5 @@ W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Proj
 W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\Database_Assessment\obj\Debug\Database_Assessment.csproj.CopyComplete
 W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\Database_Assessment\obj\Debug\Database_Assessment.exe
 W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\Database_Assessment\obj\Debug\Database_Assessment.pdb
+W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\Database_Assessment\obj\Debug\Database_Assessment.Login.resources
+W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\Database_Assessment\obj\Debug\Database_Assessment.Home.resources

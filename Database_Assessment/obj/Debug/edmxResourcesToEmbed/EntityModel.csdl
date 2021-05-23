@@ -163,5 +163,13 @@
       <End Role="SweetDishesList" EntitySet="SweetDishesLists" />
       <End Role="PrasadamDistribution" EntitySet="PrasadamDistributions" />
     </AssociationSet>
+    <EntitySet Name="Logins" EntityType="TempleDBModel.Login" />
   </EntityContainer>
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TempleDBModelStoreContainer" CdmEntityContainer="TempleDBEntities">
+    <EntitySetMapping Name="Priests">
+      <EntityTypeMapping TypeName="TempleDBModel.Priest">
+        <MappingFragment StoreEntitySet="Priests">
+          <ScalarProperty Name="PriestID" ColumnName="PriestID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+          <ScalarProperty Name="DOJ" ColumnName="DOJ" />
+          <ScalarProperty Name="LockerNumber" ColumnName="LockerNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Responsibilities">
+      <EntityTypeMapping TypeName="TempleDBModel.Responsibility">
+        <MappingFragment StoreEntitySet="Responsibilities">
+          <ScalarProperty Name="ResponsibilityID" ColumnName="ResponsibilityID" />
+          <ScalarProperty Name="Responsibility1" ColumnName="Responsibility" />
+          <ScalarProperty Name="MinimumExperience" ColumnName="MinimumExperience" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RiceItemsLists">
+      <EntityTypeMapping TypeName="TempleDBModel.RiceItemsList">
+        <MappingFragment StoreEntitySet="RiceItemsList">
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="DishName" ColumnName="DishName" />
+          <ScalarProperty Name="CostPerPlate" ColumnName="CostPerPlate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SweetDishesLists">
+      <EntityTypeMapping TypeName="TempleDBModel.SweetDishesList">
+        <MappingFragment StoreEntitySet="SweetDishesList">
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="DishName" ColumnName="DishName" />
+          <ScalarProperty Name="CostPerPlate" ColumnName="CostPerPlate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Chores">
+      <EntityTypeMapping TypeName="TempleDBModel.Chore">
+        <MappingFragment StoreEntitySet="Chores">
+          <ScalarProperty Name="SrNo" ColumnName="SrNo" />
+          <ScalarProperty Name="PriestID" ColumnName="PriestID" />
+          <ScalarProperty Name="Resonsibilities" ColumnName="Resonsibilities" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PrasadamDistributions">
+      <EntityTypeMapping TypeName="TempleDBModel.PrasadamDistribution">
+        <MappingFragment StoreEntitySet="PrasadamDistribution">
+          <ScalarProperty Name="SrNo" ColumnName="SrNo" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="PriestID" ColumnName="PriestID" />
+          <ScalarProperty Name="SweetDishIDs" ColumnName="SweetDishIDs" />
+          <ScalarProperty Name="RiceItemIDs" ColumnName="RiceItemIDs" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Expences">
+      <EntityTypeMapping TypeName="TempleDBModel.Expence">
+        <MappingFragment StoreEntitySet="Expences">
+          <ScalarProperty Name="Yearly" ColumnName="Yearly" />
+          <ScalarProperty Name="Monthly" ColumnName="Monthly" />
+          <ScalarProperty Name="Daily" ColumnName="Daily" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="SrNo" ColumnName="SrNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logins">
+      <EntityTypeMapping TypeName="TempleDBModel.Login">
+        <MappingFragment StoreEntitySet="Logins">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

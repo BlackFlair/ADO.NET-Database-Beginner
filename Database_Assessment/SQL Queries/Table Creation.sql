@@ -54,7 +54,7 @@ constraint "FK_PrasadamDistribution_RiceItemsList" foreign key ("RiceItemIDs") r
 )
 go
 
-create table "Expenses"(
+create table "Expences"(
 "SrNo" int identity (1,1) not null,
 "Date" date not null,
 "Daily" decimal default 0,
@@ -66,6 +66,7 @@ go
 
 create table "Login"(
 "ID" nvarchar(20),
-"Password" nvarchar(20)
+"Password" nvarchar(20),
+constraint "PK_Login" primary key clustered("ID")
 )
 go

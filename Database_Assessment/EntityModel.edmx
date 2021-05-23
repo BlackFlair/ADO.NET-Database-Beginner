@@ -15,7 +15,7 @@ warning 6002: The table/view 'TempleDB.dbo.Chores' does not have a primary key d
           <Property Name="PriestID" Type="int" />
           <Property Name="Resonsibilities" Type="int" />
         </EntityType>
-        <EntityType Name="Expenses">
+        <EntityType Name="Expences">
           <Key>
             <PropertyRef Name="SrNo" />
           </Key>
@@ -25,12 +25,13 @@ warning 6002: The table/view 'TempleDB.dbo.Chores' does not have a primary key d
           <Property Name="Monthly" Type="decimal" Precision="18" Scale="0" />
           <Property Name="Yearly" Type="decimal" Precision="18" Scale="0" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'TempleDB.dbo.Login' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Login">
-          <Property Name="ID" Type="nvarchar" MaxLength="20" />
+        <EntityType Name="Logins">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Password" Type="nvarchar" MaxLength="20" />
-        </EntityType>-->
+        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'TempleDB.dbo.PrasadamDistribution' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PrasadamDistribution">
@@ -141,7 +142,8 @@ warning 6002: The table/view 'TempleDB.dbo.PrasadamDistribution' does not have a
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="TempleDBModelStoreContainer">
-          <EntitySet Name="Expenses" EntityType="Self.Expenses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Expences" EntityType="Self.Expences" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Logins" EntityType="Self.Logins" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Priests" EntityType="Self.Priests" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Responsibilities" EntityType="Self.Responsibilities" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RiceItemsList" EntityType="Self.RiceItemsList" Schema="dbo" store:Type="Tables" />
@@ -188,16 +190,6 @@ warning 6002: The table/view 'TempleDB.dbo.PrasadamDistribution' does not have a
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TempleDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Expenses">
-          <Key>
-            <PropertyRef Name="SrNo" />
-          </Key>
-          <Property Name="SrNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Daily" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="Monthly" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="Yearly" Type="Decimal" Precision="18" Scale="0" />
-        </EntityType>
         <EntityType Name="Priest">
           <Key>
             <PropertyRef Name="PriestID" />
@@ -324,7 +316,6 @@ warning 6002: The table/view 'TempleDB.dbo.PrasadamDistribution' does not have a
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="TempleDBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Expenses" EntityType="TempleDBModel.Expenses" />
           <EntitySet Name="Priests" EntityType="Self.Priest" />
           <EntitySet Name="Responsibilities" EntityType="Self.Responsibility" />
           <EntitySet Name="RiceItemsLists" EntityType="Self.RiceItemsList" />
@@ -351,24 +342,32 @@ warning 6002: The table/view 'TempleDB.dbo.PrasadamDistribution' does not have a
             <End Role="SweetDishesList" EntitySet="SweetDishesLists" />
             <End Role="PrasadamDistribution" EntitySet="PrasadamDistributions" />
           </AssociationSet>
+          <EntitySet Name="Expences" EntityType="TempleDBModel.Expence" />
+          <EntitySet Name="Logins" EntityType="TempleDBModel.Login" />
         </EntityContainer>
+        <EntityType Name="Expence">
+          <Key>
+            <PropertyRef Name="SrNo" />
+          </Key>
+          <Property Name="SrNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Daily" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Monthly" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Yearly" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="TempleDBModelStoreContainer" CdmEntityContainer="TempleDBEntities">
-          <EntitySetMapping Name="Expenses">
-            <EntityTypeMapping TypeName="TempleDBModel.Expenses">
-              <MappingFragment StoreEntitySet="Expenses">
-                <ScalarProperty Name="SrNo" ColumnName="SrNo" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="Daily" ColumnName="Daily" />
-                <ScalarProperty Name="Monthly" ColumnName="Monthly" />
-                <ScalarProperty Name="Yearly" ColumnName="Yearly" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Priests">
             <EntityTypeMapping TypeName="TempleDBModel.Priest">
               <MappingFragment StoreEntitySet="Priests">
@@ -425,6 +424,25 @@ warning 6002: The table/view 'TempleDB.dbo.PrasadamDistribution' does not have a
                 <ScalarProperty Name="SweetDishIDs" ColumnName="SweetDishIDs" />
                 <ScalarProperty Name="RiceItemIDs" ColumnName="RiceItemIDs" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Expences">
+            <EntityTypeMapping TypeName="TempleDBModel.Expence">
+              <MappingFragment StoreEntitySet="Expences">
+                <ScalarProperty Name="Yearly" ColumnName="Yearly" />
+                <ScalarProperty Name="Monthly" ColumnName="Monthly" />
+                <ScalarProperty Name="Daily" ColumnName="Daily" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="SrNo" ColumnName="SrNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logins">
+            <EntityTypeMapping TypeName="TempleDBModel.Login">
+              <MappingFragment StoreEntitySet="Logins">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
