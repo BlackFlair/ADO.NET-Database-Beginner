@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="02f8c8ef38874a63b710736e5770485f" Name="Diagram1">
+        <EntityTypeShape EntityType="TempleDBModel.Expenses" Width="1.75" PointX="9.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TempleDBModel.Priest" Width="1.5" PointX="1" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TempleDBModel.Responsibility" Width="1.75" PointX="3.625" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TempleDBModel.RiceItemsList" Width="1.5" PointX="6.625" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TempleDBModel.SweetDishesList" Width="1.5" PointX="6.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TempleDBModel.Chore" Width="1.5" PointX="0.875" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TempleDBModel.PrasadamDistribution" Width="1.5" PointX="3.875" PointY="0.5" IsExpanded="true" />
+        <AssociationConnector Association="TempleDBModel.FK_Chores_Priests" ManuallyRouted="false" />
+        <AssociationConnector Association="TempleDBModel.FK_PrasadamDistribution_Priests" ManuallyRouted="false" />
+        <AssociationConnector Association="TempleDBModel.FK_Chores_Responsibilities" ManuallyRouted="false" />
+        <AssociationConnector Association="TempleDBModel.FK_PrasadamDistribution_RiceItemsList" ManuallyRouted="false" />
+        <AssociationConnector Association="TempleDBModel.FK_PrasadamDistribution_SweetDishesList" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

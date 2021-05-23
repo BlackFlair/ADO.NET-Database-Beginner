@@ -1,0 +1,14 @@
+W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\Database_Assessment\bin\Debug\Database_Assessment.exe.config
+W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\Database_Assessment\bin\Debug\Database_Assessment.exe
+W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\Database_Assessment\bin\Debug\Database_Assessment.pdb
+W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\Database_Assessment\bin\Debug\EntityFramework.dll
+W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\Database_Assessment\bin\Debug\EntityFramework.SqlServer.dll
+W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\Database_Assessment\bin\Debug\EntityFramework.xml
+W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\Database_Assessment\bin\Debug\EntityFramework.SqlServer.xml
+W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\Database_Assessment\obj\Debug\Database_Assessment.csprojAssemblyReference.cache
+W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\Database_Assessment\obj\Debug\Database_Assessment.Properties.Resources.resources
+W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\Database_Assessment\obj\Debug\Database_Assessment.csproj.GenerateResource.cache
+W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\Database_Assessment\obj\Debug\Database_Assessment.csproj.CoreCompileInputs.cache
+W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\Database_Assessment\obj\Debug\Database_Assessment.csproj.CopyComplete
+W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\Database_Assessment\obj\Debug\Database_Assessment.exe
+W:\__WORK__\NewWave Technologies (India)\_Training_\Code\C# & .NET\Database_Project\Database_Assessment\obj\Debug\Database_Assessment.pdb
